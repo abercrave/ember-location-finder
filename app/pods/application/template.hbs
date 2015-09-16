@@ -1,0 +1,16 @@
+<h2 id="title">Locations</h2>
+
+<nav>
+  {{#link-to 'index'}}Home{{/link-to}}
+  {{#link-to 'locations'}}Locations{{/link-to}}
+</nav>
+
+{{outlet}}
+
+{{#if overlayIsVisible}}
+  <div class="overlay {{if overlayIsOpen 'is-open'}}">
+    {{#if isLoading}}
+      <div class="loader">Loading...</div>
+    {{/if}}
+  </div>
+{{/if}}

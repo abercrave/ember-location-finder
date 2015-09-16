@@ -1,0 +1,31 @@
+{{filter-nav
+  currentPathname=currentPathname
+  facets=facets
+  prefixPath='/locations'
+  prefixText='Locations'
+}}
+
+<table>
+
+  <tr>
+    <th>
+      Name
+    </th>
+
+    {{#each-in facets as |facet|}}
+      <th>
+        {{facet}}
+      </th>
+    {{/each-in}}
+
+  </tr>
+
+  {{#each locations as |location|}}
+    {{location-row facets=facets location=location}}
+  {{/each}}
+
+</table>
+
+{{#x-button action='showMore' enabled=(mut hasMore)}}
+  <label class="label">Show More + </label> <span class="note">(Displaying {{recordsLoaded}} of {{recordsTotal}})</span>
+{{/x-button}}

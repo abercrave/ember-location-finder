@@ -1,0 +1,16 @@
+<td>
+  {{#link-to 'location' location}}
+    {{location.name}}
+  {{/link-to}}
+</td>
+
+{{#each-in facets as |facet|}}
+  <td>
+    {{filter-link
+      facet=facet
+      facets=facets
+      item=location
+      prefix='/locations'
+    }}
+  </td>
+{{/each-in}}
