@@ -5,7 +5,7 @@ const { or } = computed;
 
 export default Ember.Controller.extend({
   debug: false,
-  isLoading: false,
+  isLoading: true,
   limit: 20,
   overlayIsOpen: false,
 

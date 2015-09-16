@@ -37,6 +37,7 @@ export default Ember.Route.extend({
     // Update controller meta
     controller.setProperties({
       facets: meta.facets,
+      isLoading: false,
       pagesTotal: meta.pagesTotal,
       recordsTotal: meta.recordsTotal
     });
