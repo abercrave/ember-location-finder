@@ -78,10 +78,26 @@ export default Ember.Controller.extend({
     }
 
     var self = this;
+
     var limit = get(this, 'limit');
     var recordsLoaded = get(this, 'recordsLoaded');
     var page = get(this, 'page');
+    var pagesTotal = get(this, 'pagesTotal');
+    var recordsTotal = get(this, 'recordsTotal');
+
     var recordsThreshold = page * limit; // Calculate the expected number of results
+
+    console.log('recordsTotal:', get(this, 'recordsTotal'));
+
+    // Abort if already at the expected number of results
+    if (recordsLoaded === recordsThreshold || recordsLoaded === recordsTotal) {
+
+      if (get(this, 'application.debug')) {
+        console.log(' -> Already at the expected number of results ... Abort!');
+      }
+
+      return;
+    }
 
     if (get(this, 'application.debug')) {
       console.log(' -> limit:', limit);

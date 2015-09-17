@@ -2,7 +2,7 @@
 
 <nav>
   {{#link-to 'index'}}Home{{/link-to}}
-  {{#link-to 'locations'}}Locations{{/link-to}}
+  {{#link-to 'locations' (query-params startPage=1)}}Locations{{/link-to}}
 </nav>
 
 {{outlet}}

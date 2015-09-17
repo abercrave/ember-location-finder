@@ -4,7 +4,7 @@ const { computed, get, inject, observer, run, set } = Ember;
 const { or } = computed;
 
 export default Ember.Controller.extend({
-  debug: false,
+  debug: true,
   isLoading: true,
   limit: 20,
   overlayIsOpen: false,
